@@ -91,8 +91,8 @@ export default {
       msg: 'Welcome to Your Vue.js App'
     }
   },
-  methods: {
-    test () {
+  methods               :          {
+    test ()     {
 
     }
   },
