@@ -92,7 +92,9 @@ export default {
     }
   },
   methods: {
+    test () {
 
+    }
   },
   created () {
 
