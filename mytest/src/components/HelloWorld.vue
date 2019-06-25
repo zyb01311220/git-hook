@@ -1,5 +1,7 @@
 <template>
-   <canvas id="space"></canvas>
+   <div class="add">
+      <canvas id="space"></canvas>
+   </div>
 </template>
 <script>
 import canvasFunc from '../utils/canvas'
@@ -39,5 +41,9 @@ li {
 }
 a {
   color: #42b983;
+}
+.add{
+  height:100%;
+  /* background:#42b983; */
 }
 </style>

@@ -12,6 +12,6 @@ export default {
 
 <style>
   html,body,#app{
-    overflow:hidden;
+    height:100%;
   }
 </style>

@@ -54,7 +54,6 @@ const canvasFunc = () => {
 
   function drawStars () {
     var pixelX, pixelY, pixelRadius
-
     // Resize to the screen
     if ((canvas.height !== window.innerHeight && canvas.height < window.innerHeight) || (canvas.width !== window.innerWidth && canvas.width < window.innerWidth)) {
       if (window.innerWidth < 1280) {
