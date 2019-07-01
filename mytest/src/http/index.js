@@ -3,7 +3,6 @@ import {Message} from 'element-ui'
 import api from './api'
 import {getCookie} from '../utils'
 import router from '../router'
-
 const http = axios.create({
   baseURL: api.URL(),
   timeout: 30000,
@@ -25,13 +24,11 @@ http.interceptors.request.use(config => {
           return getCookie("Token");
       }
   })();
-     
   if (AUTH_TOKEN) {
       config.headers.Token = AUTH_TOKEN;
   }
   return config;
 })
-
 http.interceptors.response.use(
   res => {
     res && (res.code === 20000 || res.status && res.status.code === 20000)
@@ -43,5 +40,4 @@ http.interceptors.response.use(
 )
 http.all = axios.all
 http.spread = axios.spread
-
 export default http
