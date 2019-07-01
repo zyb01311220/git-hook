@@ -12,6 +12,7 @@ const http = axios.create({
   responseType: 'json',
   // withCredentials: true // 跨域请求带cookie
 })
+
 // //拦截器，预处理request
 http.interceptors.request.use(config => {
   let AUTH_TOKEN = (function() {
