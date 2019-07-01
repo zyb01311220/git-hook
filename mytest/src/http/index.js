@@ -1,7 +1,5 @@
 import axios from 'axios'
-import {
-  Message
-} from 'element-ui'
+import {Message} from 'element-ui'
 import api from './api'
 import {getCookie} from '../utils'
 import router from '../router'
@@ -15,7 +13,6 @@ const http = axios.create({
   responseType: 'json',
   // withCredentials: true // 跨域请求带cookie
 })
-
 // //拦截器，预处理request
 http.interceptors.request.use(config => {
   let AUTH_TOKEN = (function() {
@@ -36,7 +33,6 @@ http.interceptors.request.use(config => {
 })
 
 http.interceptors.response.use(
-
   res => {
     res && (res.code === 20000 || res.status && res.status.code === 20000)
     return res.data
@@ -45,26 +41,6 @@ http.interceptors.response.use(
     Promise.reject(error)
   }
 )
-
-const CONFIG = {
-  full: true
-}
-
-http.getFull = (url, config) => {
-  config = Object.assign({}, config, CONFIG, {
-    url,
-    method: 'get'
-  })
-}
-
-http.postFull = (url, data, config) => {
-  config = Object.assign({}, config, ONFIG, {
-    url,
-    data,
-    method: 'post'
-  })
-}
-
 http.all = axios.all
 http.spread = axios.spread
 
